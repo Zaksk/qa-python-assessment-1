@@ -35,8 +35,20 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
+from tkinter import N
+
+
 def one(input1, input2):
-	return ""
+	first_len = len(input1)
+	second_len = len(input2)
+
+	if first_len == second_len:
+		answer = input1 + " " + input2
+	elif first_len > second_len:
+		answer = input1
+	elif first_len < second_len:
+		answer = input2
+	return answer
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -60,7 +72,18 @@ def one(input1, input2):
 	# No hints for this question
 
 def two(arg1):
-	return "null"
+
+	if arg1 % 3 and arg1 % 5 == 0:
+		return "fizzbuzz"
+	elif arg1 % 3 == 0:
+		return "fizz"
+	elif arg1 % 5 == 0:
+		return  "buzz"
+	else:
+		return "null"
+
+
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -78,8 +101,14 @@ def two(arg1):
 
 	# How do we ignore case in a String? help(str) may offer some insight.
 
-def three(input):
-    return 0
+def three(input1):
+
+    input1 = input1.lower()
+    vcount=0
+    for v in "aeiou":
+        vcount += input1.count(v)
+    return vcount
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -102,7 +131,14 @@ def three(input):
 
 
 def four(input):
-    return False
+	for i in range(len(input)-1):
+		if "c" in input:
+			c_mnem = input.i("c")
+			return "ei" == input[c_mnem + 1:c_mnem + 3]
+		elif "ie" in input:
+			return True
+		elif "ei" in input:
+			return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -144,7 +180,13 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-	return False
+	string = string.lower()
+	string = string.replace(" ","")
+
+
+	if int > len(string):
+		return False
+	return string[int-1] == char
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -167,7 +209,14 @@ def six(string, int, char):
 	# Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
-	return -1
+
+	message = inputString.replace(" ","")
+	if char not in message:
+		return -1
+	else:
+		char_pos = message.index(char) + 1
+		return char_pos
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -194,7 +243,16 @@ def seven(inputString, char):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def eight(arg1):
-	return 0
+	num = arg1.split()
+	res = []
+	for n in num:
+		numbers_list = list(n)
+		for i in range(len(numbers_list)):
+			numbers_list[i] = int(numbers_list[i])
+		operation = sum(numbers_list)
+		res.append(operation)
+	return max(res)
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
