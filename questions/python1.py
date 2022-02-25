@@ -98,8 +98,14 @@ def two(arg1):
 
 	# How do we ignore case in a String? help(str) may offer some insight.
 
-def three(input):
-    return 0
+def three(input1):
+
+    input1 = input1.lower()
+    vcount=0
+    for v in "aeiou":
+        vcount += input1.count(v)
+    return vcount
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
