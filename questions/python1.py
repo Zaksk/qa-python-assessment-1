@@ -199,7 +199,14 @@ def six(string, int, char):
 	# Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
-	return -1
+
+	message = inputString.replace(" ","")
+	if char not in message:
+		return -1
+	else:
+		char_pos = message.index(char) + 1
+		return char_pos
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
