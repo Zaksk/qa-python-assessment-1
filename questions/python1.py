@@ -35,6 +35,9 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
+from tkinter import N
+
+
 def one(input1, input2):
 	first_len = len(input1)
 	second_len = len(input2)
@@ -233,7 +236,16 @@ def seven(inputString, char):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def eight(arg1):
-	return 0
+	num = arg1.split()
+	res = []
+	for n in num:
+		numbers_list = list(n)
+		for i in range(len(numbers_list)):
+			numbers_list[i] = int(numbers_list[i])
+		operation = sum(numbers_list)
+		res.append(operation)
+	return max(res)
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
