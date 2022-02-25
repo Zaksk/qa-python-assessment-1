@@ -131,7 +131,14 @@ def three(input1):
 
 
 def four(input):
-    return False
+	for i in range(len(input)-1):
+		if "c" in input:
+			c_mnem = input.i("c")
+			return "ei" == input[c_mnem + 1:c_mnem + 3]
+		elif "ie" in input:
+			return True
+		elif "ei" in input:
+			return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
